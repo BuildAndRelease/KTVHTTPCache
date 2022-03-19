@@ -247,6 +247,9 @@ FOUNDATION_EXPORT const unsigned char KTVHTTPCacheVersionString[];
  */
 + (void)downloadSetUnacceptableContentTypeDisposer:(BOOL(^)(NSURL *URL, NSString *contentType))unacceptableContentTypeDisposer;
 
+
++ (void)downloadError:(void(^)(NSURL *URL, NSString *errorString, NSString *errorCode))requestError;
+
 /**
  *  Log
  *

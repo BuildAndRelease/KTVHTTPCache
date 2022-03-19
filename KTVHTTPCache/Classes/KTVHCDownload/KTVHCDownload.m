@@ -156,6 +156,9 @@ NSString * const KTVHCContentTypeBinaryOctetStream      = @"binary/octet-stream"
             error = [KTVHCError errorForResponseUnavailable:task.currentRequest.URL
                                                     request:task.currentRequest
                                                    response:task.response];
+            if (self.requestError) {
+                self.requestError(dataRequest.URL, response.description, [NSString stringWithFormat:@"%ld",(long)response.statusCode]);
+            }
         }
     }
     if (!error) {

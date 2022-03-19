@@ -143,6 +143,10 @@
     [KTVHCDownload download].unacceptableContentTypeDisposer = unacceptableContentTypeDisposer;
 }
 
++ (void)downloadError:(void(^)(NSURL *URL, NSString *errorString, NSString *errorCode))requestError {
+    [KTVHCDownload download].requestError = requestError;
+}
+
 #pragma mark - Log
 
 + (void)logAddLog:(NSString *)log
